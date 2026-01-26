@@ -3,21 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-  <style>
-    body {
-        font-family: Arial, sans-serif;
-        margin: 20px;
-    }
+    <title>U07 RWD LAB | CSS Grid Holy Grail Layout</title>
 
-    p { color: red; }
-      
-  </style>
+    <style>
+        /* TODO: Define the mobile-first grid container */
+        /* Use grid-template-areas for a single column: header, nav, content, side, footer */
+     
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "header"
+                "nav"
+                "content"
+                "side"
+                "footer";
+        }
+
+        /* TODO: Assign grid-areas to the elements below (header, nav, main, aside, footer) */
+        header {
+            grid-area: header;
+            background-color: aqua;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: rgb(226, 110, 43);
+
+
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            padding: 1rem;
+            justify-content: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        main {
+            grid-area: content;
+            background-color: darkseagreen;
+        }
+
+        aside {
+            grid-area: side;
+            background-color: lightseagreen;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: slategray;
+        }
+
+          /* TODO: Create a MEDIA QUERY for screens WIDER than 550px */
+        /* Change the grid-template-areas to the 3-column "Holy Grail" layout */
+        @media (min-width: 550px) {
+            .container {
+                height: 100vh;
+                grid-template-columns: 200px 1fr 200px;
+                grid-template-rows: auto 1fr auto;
+                grid-template-areas:
+                "header header header"
+                "nav main side"
+                "footer footer footer"
+
+                    
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
 </head>
-<body>
-  <p>I am kohen liverance</p>
 
-    <h3>Welcome to my page</h3>
-    
+<body>
+            <!-- CSS FLEXBOX NAVIGATION -->
+     <!-- TODO: Add a semantic nav element below this comment that contains 4 - 6 HTML anchor tags (hyperlinks), then use Flexbox to build your responsive navbar -->
+    </div>
 </body>
 </html>
