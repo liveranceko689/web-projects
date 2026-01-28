@@ -1,106 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>U07 RWD LAB | CSS Grid Holy Grail Layout</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>U07 RWD LAB | CSS Grid Holy Grail Layout</title>
 
-    <style>
-        /* TODO: Define the mobile-first grid container */
-        /* Use grid-template-areas for a single column: header, nav, content, side, footer */
-     
-        .container {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-template-areas:
-                "header"
-                "nav"
-                "content"
-                "side"
-                "footer";
-        }
+<style>
+/* Mobile-first layout */
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "nav"
+        "content"
+        "side"
+        "footer";
+}
 
-        /* TODO: Assign grid-areas to the elements below (header, nav, main, aside, footer) */
-        header {
-            grid-area: header;
-            background-color: aqua;
-        }
+header {
+    grid-area: header;
+    background-color: aqua;
+}
 
-        nav {
-            grid-area: nav;
-            background-color: rgb(226, 110, 43);
+nav {
+    grid-area: nav;
+    background-color: rgb(226, 110, 43);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1rem;
+    justify-content: center;
+}
 
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            padding: 1rem;
-            justify-content: center;
-        }
+main {
+    grid-area: content;
+    background-color: darkseagreen;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+aside {
+    grid-area: side;
+    background-color: lightseagreen;
+}
 
-        main {
-            grid-area: content;
-            background-color: darkseagreen;
-        }
+footer {
+    grid-area: footer;
+    background-color: slategray;
+}
 
-        aside {
-            grid-area: side;
-            background-color: lightseagreen;
-        }
+/* Desktop layout */
+@media (min-width: 550px) {
+    .container {
+        height: 100vh;
+        grid-template-columns: 200px 1fr 200px;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header header header"
+            "nav content side"
+            "footer footer footer";
+    }
 
-        footer {
-            grid-area: footer;
-            background-color: slategray;
-        }
-
-          /* TODO: Create a MEDIA QUERY for screens WIDER than 550px */
-        /* Change the grid-template-areas to the 3-column "Holy Grail" layout */
-        @media (min-width: 550px) {
-            .container {
-                height: 100vh;
-                grid-template-columns: 200px 1fr 200px;
-                grid-template-rows: auto 1fr auto;
-                grid-template-areas:
-                "header header header"
-                "nav main side"
-                "footer footer footer"
-
-                    
-            }
-
-            nav {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-        }
-    </style>
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+</style>
 </head>
 
 <body>
-        <div class="container">
-        <header>Header</header>
+<div class="container">
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
-        </nav>
+    <header>Header</header>
 
-            <main>Main Content</main>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
 
-            <aside> class="l-sidebar">Left Sidebar</aside>
-            <aside> class="r-sidebar">Right Sidebar</aside>
+    <main>Main Content</main>
 
-            <footer>Footer</footer>
-            <!-- CSS FLEXBOX NAVIGATION -->
-     <!-- TODO: Add a semantic nav element below this comment that contains 4 - 6 HTML anchor tags (hyperlinks), then use Flexbox to build your responsive navbar -->
-    </div>
+    <aside>Sidebar</aside>
+
+    <footer>Footer</footer>
+
+</div>
 </body>
 </html>
+
