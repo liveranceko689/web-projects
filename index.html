@@ -1,98 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>U07 RWD LAB | CSS Grid Holy Grail Layout</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-/* Mobile-first layout */
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas:
-        "header"
-        "nav"
-        "content"
-        "side"
-        "footer";
-}
-
-header {
-    grid-area: header;
-    background-color: aqua;
-}
-
-nav {
-    grid-area: nav;
-    background-color: rgb(226, 110, 43);
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
-    justify-content: center;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-main {
-    grid-area: content;
-    background-color: darkseagreen;
-}
-
-aside {
-    grid-area: side;
-    background-color: lightseagreen;
-}
-
-footer {
-    grid-area: footer;
-    background-color: slategray;
-}
-
-/* Desktop layout */
-@media (min-width: 550px) {
+  <style>
+    /* TODO 1 & 2: Grid with auto-fit + repeat + minmax */
     .container {
-        height: 100vh;
-        grid-template-columns: 200px 1fr 200px;
-        grid-template-rows: auto 1fr auto;
-        grid-template-areas:
-            "header header header"
-            "nav content side"
-            "footer footer footer";
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;          /* TODO 3: Small gap for the gallery */
+      padding: 15px;
     }
 
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
+    /* Prevents images from overflowing their respective grid cells */
+    .container img {
+      width: 100%;
+      height: 150px;     /* TODO 4: Uniform image height */
+      object-fit: cover; /* TODO 5: Prevent image distortion */
     }
-}
-</style>
+  </style>
 </head>
 
 <body>
-<div class="container">
 
-    <header>Header</header>
+  <!-- TODO 6: Container div -->
+  <div class="container">
 
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">Services</a>
-        <a href="#">Contact</a>
-    </nav>
+    <!-- TODO 7: 12 child divs with images + custom alt text -->
+    <div><img src="https://picsum.photos/400/300?random=1" alt="Mountain landscape"></div>
+    <div><img src="https://picsum.photos/400/300?random=2" alt="Forest trail"></div>
+    <div><img src="https://picsum.photos/400/300?random=3" alt="Ocean waves"></div>
+    <div><img src="https://picsum.photos/400/300?random=4" alt="City skyline"></div>
+    <div><img src="https://picsum.photos/400/300?random=5" alt="Desert dunes"></div>
+    <div><img src="https://picsum.photos/400/300?random=6" alt="Snowy mountains"></div>
+    <div><img src="https://picsum.photos/400/300?random=7" alt="Sunset over lake"></div>
+    <div><img src="https://picsum.photos/400/300?random=8" alt="Green valley"></div>
+    <div><img src="https://picsum.photos/400/300?random=9" alt="Rocky coastline"></div>
+    <div><img src="https://picsum.photos/400/300?random=10" alt="Waterfall"></div>
+    <div><img src="https://picsum.photos/400/300?random=11" alt="Countryside road"></div>
+    <div><img src="https://picsum.photos/400/300?random=12" alt="Starry night sky"></div>
 
-    <main>Main Content</main>
+  </div>
 
-    <aside>Sidebar</aside>
-
-    <footer>Footer</footer>
-
-</div>
 </body>
 </html>
 
+
+ 
+
+
+</body>
+</html>
