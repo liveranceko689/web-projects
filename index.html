@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      font-size: 16px;
+    }
+
+    body {
+      max-width: 95%;
+      margin: 5px auto;
+    }
     /* TODO 1 & 2: Grid with auto-fit + repeat + minmax */
     .container {
       display: grid;
@@ -19,9 +33,29 @@
       height: 150px;     /* TODO 4: Uniform image height */
       object-fit: cover; /* TODO 5: Prevent image distortion */
     }
+
+    .gallery-title h1 {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .image {
+      display: grid;
+      grind-template-rows: 1fr auto;
+    }
+
+    figcaption {
+      text-align: center;
+      margin: 5px 0 0 0;
+      font-size:0.9rem;
+      color: #333;
+      background-color: lightgrey;
+      border: 2px solid black;
+      padding: 0.25rem;
+    }
+    
   </style>
 </head>
-
 <body>
 
   <!-- TODO 6: Container div -->
