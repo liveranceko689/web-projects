@@ -18,7 +18,6 @@
     body {
       max-width: 95%;
       margin: 5px auto;
-      background-color: blue;
     }
     /* TODO 1 & 2: Grid with auto-fit + repeat + minmax */
     .container {
@@ -26,6 +25,8 @@
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 10px;          /* TODO 3: Small gap for the gallery */
       padding: 15px;
+      border: 5px;
+      background-color: lightblue;
     }
 
     /* Prevents images from overflowing their respective grid cells */
@@ -43,6 +44,7 @@
     .image {
       display: grid;
       grind-template-rows: 1fr auto;
+      border: 2px solid black;
     }
 
     figcaption {
